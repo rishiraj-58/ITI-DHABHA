@@ -2,12 +2,13 @@ const asyncHandler = require('express-async-handler')
 const Order = require("../models/orderModel")
 
 const takeOrder = asyncHandler(async(req,res) => {
-    const { name, phoneNumber, address, orders, payment } = req.body
+    const { name, phoneNumber, address, hostal, orders, payment } = req.body
 
     const order = await Order.create({
         name,
         phoneNumber,
         address,
+        hostal,
         orders,
         payment
     })
@@ -18,6 +19,7 @@ const takeOrder = asyncHandler(async(req,res) => {
             name: order.name,
             phoneNumber: order.phoneNumber,
             address: order.address,
+            hostal: order.hostal,
             orders: order.orders,
             payment: order.payment,    
         })

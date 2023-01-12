@@ -5,6 +5,7 @@ const orderSchema = mongoose.Schema(
     name: { type: "String", required: true },
     phoneNumber: { type: "Number",  required: true },
     address: { type: "String",  required: true },
+    hostal: { type: "String",  required: true },
     orders: { type: "String",  required: true },
     payment: { type: "Number",  required: true }
   },
