@@ -4,7 +4,7 @@ import axios from 'axios'
 const Homepage = () => {
     const [menu, setMenu] = useState([])
     const fetchFoods = async() => {
-        const {data} = await axios.get("/api/food")
+        const {data} = await axios.get("https://food-app-2ekh.onrender.com/api/food")
 
         setMenu(data)
     }
