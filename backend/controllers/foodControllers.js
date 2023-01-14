@@ -2,11 +2,12 @@ const asyncHandler = require('express-async-handler')
 const Food = require("../models/foodModel")
 
 const foodMenu = asyncHandler(async(req,res) => {
-    const { name, price, offerPrice, availability } = req.body
+    const { name, price, isVeg, offerPrice, availability } = req.body
 
     const food = await Food.create({
         name,
         price,
+        isVeg,
         offerPrice,
         availability
     })
@@ -16,6 +17,7 @@ const foodMenu = asyncHandler(async(req,res) => {
             _id: food._id,
             name: food.name,
             price: food.price,
+            isVeg: food.isVeg,
             offerPrice: food.offerPrice,
             availability: food.availability   
         })

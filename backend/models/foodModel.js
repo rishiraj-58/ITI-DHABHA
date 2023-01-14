@@ -5,6 +5,7 @@ const foodModel = mongoose.Schema(
     name: { type: String, trim: true },
     price: { type: Number },
     offerPrice: { type: Number },
+    isVeg: { type: Boolean, default: true },
     pic: {
         type: "String",
         default:
